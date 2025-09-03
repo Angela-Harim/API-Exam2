@@ -13,10 +13,10 @@ class Car(BaseModel):
     id: str
     brand: str
     model: str
-    characteristic: {
-        max_speed: Number,
-        max_fuel_capacity: Number
-    }
+class Characteristic(BaseModel):
+        max_speed: float
+        max_fuel_capacity: float
+
 @app.post("/cars")
 def created_list_of_object_JSON(cars_payload: List[Cars]):
     cars_store.extend(cars_payload)
